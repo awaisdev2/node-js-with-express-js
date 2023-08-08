@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Node js</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  
+    <link
+    rel="shortcut icon"
+    href="https://sidcupfamilygolf.com/wp-content/themes/puttosaurus/favicons/favicon-32x32.png"
+    type="image/x-icon"
+  />
 </head>
-<body>
+<body class="overflow-x-hidden">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="">Node JS</a>
@@ -43,7 +47,7 @@
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Code Club</h5>
-                      <p class="card-text" style="width: 70%;">We are expert in HTML, CSS, Bootstrap, Tailwind CSS, Javascript, Angular, React, Node JS, PHP and SEO</p>
+                      <p class="card-text" style="width: 70%;">We are expert in HTML, CSS, Bootstrap, Tailwind CSS, Javascript, Angular, React, Node JS, PHP and SEO.</p>
                       <p class="card-text"><small class="text-body-secondary"><i class="fa-solid fa-envelope"></i> awais@dev.com</small></p>
                     </div>
                   </div>
@@ -88,6 +92,62 @@
         </div>
       </div>
 
+      <main>
+        <div class="row mx-5 row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>10 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button onclick="showMsg()" type="button" class="w-100 btn btn-lg btn-outline-primary">Log in to our platform</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Pro</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>20 users included</li>
+                  <li>10 GB of storage</li>
+                  <li>Priority email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <a type="button" href="about.html" class="w-100 btn btn-lg btn-primary">Get started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <a type="button" href="contact.html" class="w-100 btn btn-lg btn-primary">Contact us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
       <div id="contain" class="container bg-dark-subtle rounded mb-3 text-dark form p-5">
         <h3 class="text-center mb-3">Please Fill the Form below</h3>
         <div class="form-floating">
@@ -101,6 +161,44 @@
         <button onclick="handleOnSubmit()" class="btn my-2 btn-primary">Log in</button>
     </div>
 </div>
+
+<footer class="pt-4 bg-secondary-subtle pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 mx-5 col-md">
+        <h6>Node JS</h6>
+        <small class="d-block mb-3 text-body-secondary">© 2017-2023</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
       <script>
         function handleOnSubmit() {
@@ -139,6 +237,11 @@
             };
             userCridentials.printUsernamePassword();
             userCridentials.welcomeMsg();
+        }
+
+        function showMsg(){
+            const msg = "To log in please fill the form below"
+            alert(msg)
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
