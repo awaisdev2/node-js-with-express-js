@@ -1,0 +1,6 @@
+find
+entries
+findIndex
+some
+every
+keys
