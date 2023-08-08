@@ -24,10 +24,10 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About us</a>
+                <a class="nav-link" href="/about">About us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact us</a>
+                <a class="nav-link" href="/contact">Contact us</a>
               </li>
             </ul>
           </div>
@@ -52,7 +52,7 @@
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <img src="trafalgar-header illustration 1.png" class="img-fluid rounded-start" alt="...">
+                    <img src="image.png" class="img-fluid rounded-start" alt="...">
                   </div>
                 </div>
               </div>
@@ -220,23 +220,44 @@
                 alert("Password must contain 8 characters");
                 return;
             }
-            let userCridentials = {
-                userName: username,
-                passWord: password,
-                printUsername: function() {
-                    return console.log(username);
+            // let userCridentials = {
+            //     userName: username,
+            //     passWord: password,
+            //     printUsername: function() {
+            //         return console.log(username);
+            //     },
+            //     welcomeMsg: function() {
+            //         alert("Succesfully login!");
+            //         document.getElementById('contain').style.display = 'none'
+            //         return
+            //     },
+            //     printUsernamePassword: function() {
+            //         return console.log("You entered " + username + " as your username.\n" + "You entered " + password + " as your password");
+            //     }
+            // };
+            // userCridentials.printUsernamePassword();
+            // userCridentials.welcomeMsg();
+            fetch('http://localhost:4500/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-                welcomeMsg: function() {
-                    alert("Succesfully login!");
-                    document.getElementById('contain').style.display = 'none'
-                    return
-                },
-                printUsernamePassword: function() {
-                    return console.log("You entered " + username + " as your username.\n" + "You entered " + password + " as your password");
-                }
-            };
-            userCridentials.printUsernamePassword();
-            userCridentials.welcomeMsg();
+                body: JSON.stringify({
+                    password: password,
+                }),
+                })
+                .then((response) => {
+                    // Handle the response here
+                    if (!response.ok) {
+                        return alert('Invalid username or password');
+                    }
+                    alert('You are logged in!');
+                    console.log('$$response', response.body);
+                })
+                .catch((error) => {
+                    // Handle errors here
+                    console.log('ERRor', error);
+                });
         }
 
         function showMsg(){

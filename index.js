@@ -1,11 +1,18 @@
 const express = require('express')
 const path = require('path')
+const bodyParser = require('body-parser');
 
 const app = express()
 const publicPath = path.join(__dirname, 'public')
+app.use(
+    bodyParser.urlencoded({
+      extended: true,
+    }),
+);
+app.use(bodyParser.json());
 
-app.get('', (req,resp)=>{
-    resp.get([
+app.get('/users', (req,resp)=>{
+    resp.send([
         {
             name: 'awais',
             age: 17,
@@ -29,5 +36,30 @@ app.get('', (req,resp)=>{
         }
     ])
 })
-app.use(express.static(publicPath))
+
+app.post('/login', (req, res) => {
+    const {username, password} = req.body;
+
+    if(!username) {
+       return res.status(400).send('Username is required!');
+    }
+
+    if(!password) {
+        return res.status(400).send('Passwords is required!');
+     }
+    res.send({username, password});
+})
+app.get('/index',(_,resp)=>{
+    resp.sendFile(`${publicPath}/index.html`)
+})
+app.get('/about',(_,resp)=>{
+    resp.sendFile(`${publicPath}/about.html`)
+})
+app.get('/contact',(_,resp)=>{
+    resp.sendFile(`${publicPath}/contact.html`)
+})
+app.get('*',(_,resp)=>{
+    resp.sendFile(`${publicPath}/404.html`)
+})
+// app.use(express.static(publicPath))
 app.listen(4500)
