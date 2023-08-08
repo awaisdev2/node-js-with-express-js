@@ -44,8 +44,60 @@
           </div>
         </div>
       </div>
+      
+      <div id="contain" class="container bg-dark-subtle rounded mb-3 text-dark form p-5">
+        <h3 class="text-center mb-3">Please Fill the Form below</h3>
+        <div class="form-floating">
+          <input type="text" class="form-control bg-light text-dark" id="floatingInput" placeholder="name@example.com">
+          <label class="bg-transparent" for="floatingInput">Username</label>
+        </div>
+        <div class="my-3 form-floating">
+          <input type="password" class="form-control text-dark bg-light" id="floatingPassword" placeholder="Password">
+          <label class="bg-transparent" for="floatingPassword">Password</label>
+        </div>
+        <button onclick="handleOnSubmit()" class="btn my-2 btn-primary">Log in</button>
+    </div>
+</div>
 
-
+      <script>
+        function handleOnSubmit() {
+            let username = document.getElementById("floatingInput").value;
+            if (username === '') {
+                alert("Please fill the empty fields");
+                return;
+            }
+            if (username.length < 5) {
+                alert("Username must contain 5 characters");
+                return;
+            }
+            let password = document.getElementById("floatingPassword").value;
+            if (password === '') {
+                alert("Please fill the empty fields");
+                return;
+            }
+            if (password.length < 8) {
+                alert("Password must contain 8 characters");
+                return;
+            }
+            let userCridentials = {
+                userName: username,
+                passWord: password,
+                printUsername: function() {
+                    return console.log(username);
+                },
+                welcomeMsg: function() {
+                    alert("Succesfully login!");
+                    document.getElementById('contain').style.display = 'none'
+                    return
+                },
+                printUsernamePassword: function() {
+                    return console.log("You entered " + username + " as your username.\n" + "You entered " + password + " as your password");
+                }
+            };
+            userCridentials.printUsernamePassword();
+            userCridentials.welcomeMsg();
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/fb2c41aabf.js" crossorigin="anonymous"></script>
 </body>
