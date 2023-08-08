@@ -4,6 +4,30 @@ const bodyParser = require('body-parser');
 
 const app = express()
 const publicPath = path.join(__dirname, 'public')
+const users = [
+    {
+        name: 'awais',
+        age: 17,
+        gender: 'male',
+        id: 1,
+        email: 'awais@dev.com'
+    },
+    {
+        name: 'John',
+        age: 25,
+        gender: 'male',
+        id: 2,
+        email: 'John@dev.com'
+    },
+    {
+        name: 'Alexa',
+        age: 20,
+        gender: 'female',
+        id: 3,
+        email: 'Alexa@dev.com'
+    }
+]
+app.set('view engine','ejs');
 app.use(
     bodyParser.urlencoded({
       extended: true,
@@ -12,30 +36,17 @@ app.use(
 app.use(bodyParser.json());
 
 app.get('/users', (req,resp)=>{
-    resp.send([
-        {
-            name: 'awais',
-            age: 17,
-            gender: 'male',
-            id: 1,
-            email: 'awais@dev.com'
-        },
-        {
-            name: 'John',
-            age: 25,
-            gender: 'male',
-            id: 2,
-            email: 'John@dev.com'
-        },
-        {
-            name: 'Alexa',
-            age: 20,
-            gender: 'female',
-            id: 3,
-            email: 'Alexa@dev.com'
-        }
-    ])
+    resp.send({users})
 })
+
+app.get('/profile',(_,resp)=>{
+    const user={
+        name:'Peter',
+        email:'peter@test.com',
+        country:'USA'
+    }
+   resp.render('profile',{user})
+});
 
 app.post('/login', (req, res) => {
     const {username, password} = req.body;

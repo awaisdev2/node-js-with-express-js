@@ -49,6 +49,58 @@
 .elem:hover img {
   scale: 1;
 }
+.wrapper{
+  display: flex;
+}
+.wrapper .static-txt{
+  color: #111010;
+  font-size: 40px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: -15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #FC6D6D;
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  margin-top: 30px;
+  height: 100%;
+  width: 100%;
+  background: #EAE7E7;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 20px);
+  }
+  100%{
+    left: 0;
+  }
+}
 </style>
 <body class="overflow-x-hidden">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -78,7 +130,17 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">About us</h5>
-              <p class="card-text" style="width: 70%;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="wrapper align-items-baseline">
+                <div class="static-txt">We have</div>
+                <ul class="dynamic-txts">
+                    <li><span>Front-end Developer</span></li>
+                    <li><span>Figma Designer</span></li>
+                    <li><span>Back-end Developer</span></li>
+                    <li><span>SEO manager</span></li>
+                    <li><span>Wordpress Developer</span></li>
+                    <li><span>MySql manager</span></li>
+                </ul>
+            </div>
               <p class="card-text"><small class="text-body-secondary">We have 6+ years experience</small></p>
             </div>
           </div>
