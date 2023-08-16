@@ -35,7 +35,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.get('/users', (req,resp)=>{
+app.get('', (req,resp)=>{
     resp.send({users})
 })
 
