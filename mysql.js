@@ -16,6 +16,6 @@ connect.connect((error)=>{
     }
 })
 
-connect.query('Select * from user', (_, result)=>{
+connect.query('Select * from users', (_, result)=>{
     console.log('result', result)
 })
